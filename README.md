@@ -23,8 +23,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/llama-3.jpg"><img src="/McGill-NLP/webllama/raw/main/assets/llama-3.jpg" alt="使用 Meta Llama 3 构建" style="max-width: 100%;"></a></td>
-<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/LlamaAndGPT.png"><img src="/McGill-NLP/webllama/raw/main/assets/LlamaAndGPT.png" alt="与GPT-4V比较" style="max-width: 100%;"></a></td>
+<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/llama-3.jpg"><img src="https://github.com/McGill-NLP/webllama/raw/main/assets/llama-3.jpg" alt="使用 Meta Llama 3 构建" style="max-width: 100%;"></a></td>
+<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/LlamaAndGPT.png"><img src="https://github.com/McGill-NLP/webllama/raw/main/assets/LlamaAndGPT.png" alt="与GPT-4V比较" style="max-width: 100%;"></a></td>
 </tr>
 </tbody>
 </table>
