@@ -23,8 +23,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a target="_blank" rel="noopener noreferrer" href="/McGill-NLP/webllama/blob/main/assets/llama-3.jpg"><img src="/McGill-NLP/webllama/raw/main/assets/llama-3.jpg" alt="使用 Meta Llama 3 构建" style="max-width: 100%;"></a></td>
-<td align="center"><a target="_blank" rel="noopener noreferrer" href="/McGill-NLP/webllama/blob/main/assets/LlamaAndGPT.png"><img src="/McGill-NLP/webllama/raw/main/assets/LlamaAndGPT.png" alt="与GPT-4V比较" style="max-width: 100%;"></a></td>
+<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/llama-3.jpg"><img src="/McGill-NLP/webllama/raw/main/assets/llama-3.jpg" alt="使用 Meta Llama 3 构建" style="max-width: 100%;"></a></td>
+<td align="center"><a target="_blank" rel="noopener noreferrer" href="https://github.com/McGill-NLP/webllama/blob/main/assets/LlamaAndGPT.png"><img src="/McGill-NLP/webllama/raw/main/assets/LlamaAndGPT.png" alt="与GPT-4V比较" style="max-width: 100%;"></a></td>
 </tr>
 </tbody>
 </table>
@@ -80,31 +80,7 @@
 <span class="pl-c"># Here, you can use the predictions on platforms like playwright or browsergym</span>
 <span class="pl-s1">action</span> <span class="pl-c1">=</span> <span class="pl-en">process_pred</span>(<span class="pl-s1">out</span>[<span class="pl-s">'generated_text'</span>])  <span class="pl-c"># implement based on your platform</span>
 <span class="pl-s1">env</span>.<span class="pl-en">step</span>(<span class="pl-s1">action</span>)  <span class="pl-c"># execute the action in your environment</span></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="from datasets import load_dataset
-from huggingface_hub import snapshot_download
-from transformers import pipeline
 
-# We use validation data, but you can use your own data here
-valid = load_dataset(&quot;McGill-NLP/WebLINX&quot;, split=&quot;validation&quot;)
-snapshot_download(&quot;McGill-NLP/WebLINX&quot;, &quot;dataset&quot;, allow_patterns=&quot;templates/*&quot;)
-template = open('templates/llama.txt').read()
-
-# Run the agent on a single state (text representation) and get the action
-state = template.format(**valid[0])
-agent = pipeline(&quot;McGill-NLP/Llama-3-8b-Web&quot;)
-out = agent(state, return_full_text=False)[0]
-print(&quot;Action:&quot;, out['generated_text'])
-
-# Here, you can use the predictions on platforms like playwright or browsergym
-action = process_pred(out['generated_text'])  # implement based on your platform
-env.step(action)  # execute the action in your environment" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">评估</font></font></h2><a id="user-content-evaluation" class="anchor" aria-label="永久链接：评估" href="#evaluation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们认为，展示代理表现如何的简短演示视频不足以判断代理。简而言之，</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果没有好的基准，我们就不知道是否有好的代理商。</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们需要系统地评估代理的广泛任务，从简单的遵循指令的网络导航到复杂的对话引导浏览。</font></font></p>
@@ -118,21 +94,7 @@ python -m weblinx.eval <span class="pl-c"><span class="pl-c">#</span> automatica
 <span class="pl-c"><span class="pl-c">#</span> Visualize your results with our app:</span>
 <span class="pl-c1">cd</span> ..
 streamlit run app/Results.py</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd modeling/
-
-# After installing dependencies, downloading the dataset, and training/evaluating your model, you can evaluate:
-python -m weblinx.eval # automatically find all `results.jsonl` and generate an `aggregated_results.json` file
-
-# Visualize your results with our app:
-cd ..
-streamlit run app/Results.py" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+ 
   </div></div>
 <blockquote>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">👷&zwj;♀️</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">后续步骤</font></font></strong><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -160,21 +122,7 @@ streamlit run app/Results.py" tabindex="0" role="button">
       primaryClass={cs.CL}
 }
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@misc{lù2024weblinx,
-      title={WebLINX: Real-World Website Navigation with Multi-Turn Dialogue}, 
-      author={Xing Han Lù and Zdeněk Kasner and Siva Reddy},
-      year={2024},
-      eprint={2402.05930},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
+ 
   </div></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除非文件头中另有说明，否则此存储库中的代码已获得 MIT 许可证的许可。其他材料（模型、数据、图像）有自己的许可证，在原始页面中指定。</font></font></p>
